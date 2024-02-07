@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dobbelkever</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/main.css">
+    <script type="text/javascript" src="js/dobbelkever.js" defer></script>
+  </head>
+  <body>
+    <!--REGELS POPUP -->
+    <div class="container">
+      <button class="rules-btn" type="submit" onclick="openPopup()">Regels</button>
+      <div class="popup" id="popup">
+        <h2>Dobbelkever</h2>
+        <p>Lukt het jou om de hele kever het eerste bij elkaar te dobbelen?Je moet elk lichaamsdeel verzamelen. Als eerste heeft de kever een lichaam nodig, die kun je verzamelen door 6 te gooien. Aan lichaam zitten de pootjes (gooi 4), de staart (gooi 3) of het hoofd (gooi 5). Een leeg hoofd is natuurlijk niet compleet dus gooi 2 voor de ogen van de kever en 1 voor de voelsprieten.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+    </div>
+
+      
+
+<!--RSPELCONTAINER -->
+    <div class="flexbox-container">
+      <div class="kever-container">
+        <h2>Speler 1</h2>
+        <img class="kever" src="IMG/cute-regular-beetle.jpeg">
+        <div class="dice-container"></div>
+        <button type="button" class="btn-roll-dice">Roll Dice</button>
+      </div>
+      <div class="kever-container">
+        <h2>Speler 2</h2>
+        <img class="kever" src="IMG/cute-regular-beetle.jpeg">
+        <div class="dice-container2"></div>
+        <button type="button" class="btn-roll-dice2">Roll Dice</button>
+      </div>
+    </div>
+  </body>
+</html>

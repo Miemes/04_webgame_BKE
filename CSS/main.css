@@ -1,0 +1,153 @@
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(77, 222, 77, 0.827);
+}
+.flexbox-container{
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}
+/*Regels knop*/
+.rules-btn{
+  position: absolute;
+  right: 2%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: brown;
+  border-style: solid;
+  border-color:rgb(109, 57, 31),;
+  border-width: 4px;
+  border-radius: 5px;
+  box-shadow: 0 5px rgb(159, 40, 40, 0.9);
+}
+.rules-btn:hover{
+  cursor: pointer;
+  background-color: rgb(159, 40, 40, 0.9);
+}
+.rules-btn:active{
+  transform: translateY(5px);
+  box-shadow: 0 0px rgb(159, 40, 40, 0.9);
+}
+/*REGELS POPUP*/
+ .btn{
+   padding: 10px 60px;
+   background: #fff;
+   border: 0;
+   outline: none;
+   cursor: pointer;
+   font-size: 22px;
+   font-weight: 500;
+   border-radius: 30px;
+ }
+ .popup{
+   width: 400px;
+   background-color: darkgreen;
+   border-radius: 6px;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0.1);
+   text-align: center;
+   padding: 0 30px 30px;
+   color: #dfe6a3;
+   visibility: hidden;
+   transition: transform 0.4s, top 0.4s;
+ }
+ .open-popup{
+   visibility: visible;
+   top: 50%;
+   transform: translate(-50%, -50%) scale(1);
+ }
+ .popup h2{
+   font-size: 38px;
+   font-weight: 500;
+   margin: 30px 0 10px;
+ }
+ .popup button{
+  right: 2%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: brown;
+  border-style: solid;
+  border-color:rgb(109, 57, 31),;
+  border-width: 4px;
+  border-radius: 5px;
+  box-shadow: 0 5px rgb(159, 40, 40, 0.9);
+}
+.popup button:hover{
+  cursor: pointer;
+  background-color: rgb(159, 40, 40, 0.9);
+}
+.popup button:active{
+  transform: translateY(5px);
+  box-shadow: 0 0px rgb(159, 40, 40, 0.9);
+}
+/*KEVER CONTAINER*/
+.kever-container{
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 80vh;
+  align-items: center;
+}
+.kever{
+  margin: 2%;
+  width: 20vw;
+}
+
+/*DICE CONTAINER*/
+.dice-container{
+  display: flex;
+}
+.dice, .dice2{
+  width: 100px;
+  height: 100px;
+  position: relative; /*relative so we can position the dots where want relative to the container*/
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+.dice-dot, .dice-dot2{
+  --top: 0%;
+  --left: 0%;
+
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+
+    /* Dot Positioning*/
+    position: absolute;
+    top: var(--top); /*hier kan ik verschillende waardes in gooien voor de verticale positie*/
+    left: var(--left); /*hier kan ik verschillende waardes in gooien voor de horizontale positie*/
+    transform: translateX(calc(var(--left)* -1)) translateY(calc(var(--top)* -1)); /*this line of code is used to translate an element both horizontally and vertically based on the values of custom properties --left and --top. The negative multiplication in both cases ensures the opposite direction of the translation based on the sign of the original values.*/
+
+}
+.btn-roll-dice, .btn-roll-dice2{
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+  background-color: brown;
+  border-style: solid;
+  border-color:rgb(109, 57, 31),;
+  border-width: 4px;
+  border-radius: 10px;
+  box-shadow: 0 5px rgb(159, 40, 40, 0.9);;
+}
+.btn-roll-dice:hover, .btn-roll-dice2:hover{
+  cursor: pointer;
+  background-color: rgb(159, 40, 40, 0.9);
+  border-color:rgb(109, 57, 31,0.9),;
+}
+.btn-roll-dice:active, .btn-roll-dice2:active{
+  box-shadow: 0 0px rgb(159, 40, 40, 0.9);;
+  transform: translateY(5px);
+}
+
