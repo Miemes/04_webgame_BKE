@@ -1,32 +1,44 @@
+let lichaamImageSrc = ""; 
+let hoofdImageSrc = "";
+let pootjesImageSrc = ""; 
+let staartImageSrc = ""; 
+let ogenImageSrc = ""; 
+let voelsprietenImageSrc = ""; 
+
 function dobbel() {
-  const dobbelsteen = Math.floor((Math.random() * 6) + 1);
-  console.log(dobbelsteen);
-  updateKever(dobbelsteen);
+  const randomGetal = Math.floor((Math.random() * 6) + 1);
+  console.log(randomGetal);
+  keverLichaam(randomGetal);
+
+    // Set src attributes after changes have been made
+  document.getElementById("klichaam").src = lichaamImageSrc;
+  document.getElementById("khoofd").src = hoofdImageSrc;
+  document.getElementById("kpootjes").src = pootjesImageSrc;
+  document.getElementById("kstaart").src = staartImageSrc;
+  document.getElementById("kogen").src = ogenImageSrc;
+  document.getElementById("kvoelsprieten").src = voelsprietenImageSrc;
 }
 
-function updateKever(dobbelsteen) {
-  let imagePath;
 
-  switch(dobbelsteen) {
-    case 6:
-      document.getElementById("klichaam").src = "kever-lichaam.png";
-      break; //if this is the case, break ends processing when case is correct
-    case 5:
-      document.getElementById("khoofd").src = "kever-hoofd.png";
-      break;
-    case 4:
-      document.getElementById("kpootjes").src = "kever-pootjes.png";
-      break;
-    case 3:
-      document.getElementById("kstaart").src = "kever-staart.png";
-      break;
-    case 2:
-      document.getElementById("kogen").src = "kever-ogen.png";
-      break;
-    case 1:
-      document.getElementById("kvoelsprieten").src = "kever-voelsprieten.png";
-      break;
-    default:
-      imagePath = ""; // Handle default case if necessary
+function keverLichaam(randomGetal) {
+  if (randomGetal === 6 && lichaamImageSrc === "") {
+    lichaamImageSrc = "kever-lichaam.png";
+  } 
+  else if (randomGetal === 5 && lichaamImageSrc === "kever-lichaam.png"){
+    hoofdImageSrc = "kever-hoofd.png";
+  } 
+  else if (randomGetal === 4 && lichaamImageSrc === "kever-lichaam.png"){
+    pootjesImageSrc = "kever-pootjes.png";
+  } 
+  else if (randomGetal === 3 && lichaamImageSrc ==="kever-lichaam.png"){
+    staartImageSrc = "kever-staart.png";;
+  } 
+  else if (randomGetal=== 2 && hoofdImageSrc ==="kever-hoofd.png"){
+    ogenImageSrc = "kever-ogen.png";
+  } 
+  else if (randomGetal=== 1 && hoofdImageSrc ==="kever-hoofd.png"){
+    voelsprietenImageSrc = "kever-voelsprieten.png";
+  } else {
+    console.log("niets");
   }
 }

@@ -1,23 +1,28 @@
-// POPUP CODE
-let popup = document.getElementById("popup");
-
-      function openPopup(){
-        popup.classList.add("open-popup");
-      }
-      function closePopup(){
-        popup.classList.remove("open-popup");
-      }
-
 
 			//PLAYER 1
 const numberOfDice = 1;
 const diceContainer = document.querySelector(".dice-container");
+const btnRollDice = document.querySelector(".btn-roll-dice");
+let random;
 
-function randomizeDice(diceContainer, numberOfDice) {
+btnRollDice.addEventListener("click", () => { 
+  const interval = setInterval(() => {
+		random = Math.floor((Math.random() * 6) + 1) //generate the random number
+		randomizeDice(diceContainer, numberOfDice, random);
+	}, 50); //thats 50 ms
+	
+	setTimeout(() => {
+    clearInterval(interval);
+    // Now you can use the value of 'random' for your if statement
+    console.log(random); // Example: Logging the value of random
+  }, 500);
+}); //when the button gets clicked on its gonna call randomizeDice, diceContainer and NUMBER_OF_DICE
+
+function randomizeDice(diceContainer, numberOfDice, random) {
   diceContainer.innerHTML = ""; //1st step is to clear out any existing dice START HIERRR
 
   for (let i = 0; i < numberOfDice; i++) { //we get numberOfDice ammount of loop itterations
-    const random = Math.floor((Math.random() * 6) + 1) //generate the random number
+    
     const dice = createDice(random); //this links it to the dot-index
 
     diceContainer.appendChild(dice); //this puts the dice into the container 'diceContainer'
@@ -79,17 +84,7 @@ function createDice(number) { //this function is called create dice with a param
   return dice;
 }
 
-const btnRollDice = document.querySelector(".btn-roll-dice");
 
-btnRollDice.addEventListener("click", () => { 
-  const interval = setInterval(() => {
-		randomizeDice(diceContainer, numberOfDice);
-	}, 50); //thats 50 ms
-	
-	setTimeout(() => clearInterval(interval), 1000);
-
-	console.log(randomizeDice(random));
-}); //when the button gets clicked on its gonna call randomizeDice, diceContainer and NUMBER_OF_DICE
 
 
 //Lichaamsdelen code lijst player 1
@@ -98,6 +93,16 @@ btnRollDice.addEventListener("click", () => {
 
 
 
+
+// POPUP CODE
+let popup = document.getElementById("popup");
+
+      function openPopup(){
+        popup.classList.add("open-popup");
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup");
+      }
 
 
 
